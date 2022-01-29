@@ -193,11 +193,46 @@ species_has_happiness = {
 			}
 		}
 		AND = {
-			has_trait = trait_cybernetic
+			has_trait = trait_tec_bioservant
+			exists = from
+			OR = {
+				NOT = { exists = from }
+				from = { has_authority = auth_hive_mind }
+				from = { has_policy_flag = intelligent_bioservants_outlawed }
+				from = { NOT = { has_technology = tech_tec_bioservant_3 }}
+			}
+		}
+		AND = {
+			tec_is_cyborg_pop = yes
 			exists = from
 			from = {
-				has_authority = auth_machine_intelligence
-				has_civic = civic_machine_assimilator				# Assimilator empire
+				OR = {
+					AND = {
+						has_authority = auth_machine_intelligence
+						has_civic = civic_machine_assimilator # Assimilator empire
+					}
+					AND = {
+						has_authority = auth_hive_mind
+						has_civic = civic_tec_hive_cybernetic
+					}
+				}
+			}
+		}
+		# Mindflayers
+		AND = {
+			NOR = {
+				has_citizenship_type = {
+					type = citizenship_purge
+					country = from
+				}
+				has_slavery_type = {	# They do realise they are being eaten alive
+					type = slavery_livestock
+					country = from
+				}
+			}
+			exists = from
+			from = {
+				has_valid_civic = civic_tec_hive_mindflayers
 			}
 		}
 	}

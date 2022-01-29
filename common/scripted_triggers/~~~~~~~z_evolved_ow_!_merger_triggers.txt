@@ -58,6 +58,12 @@ merg_has_cloning_building = {
 		# Ethics and Civics Bug Branch
 		has_building = building_evolution_monastery
 		has_building = building_evolution_monastery_two
+		# ACOT
+		has_building = building_fe_clone_vats
+		has_building = building_ae_clone_vats
+		# AOT
+		has_building = building_stellarite_clone_vats
+		has_building = building_phanon_clone_vats
 		tec_has_cloning_buildings = yes
 		tec_has_genetic_buildings = yes
 	}
