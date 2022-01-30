@@ -469,12 +469,9 @@ can_species_be_assembled = {
 					}
 					# Trigger with the clone origin buildings, actually only including the vanilla one
 					OR = {
-						NOT = {
-							check_variable = {
+						check_variable = {
 								which = clone_pops_missing
-								value = 0
-							}
-						}
+								value != 0 }
 						# Unused flag, for now
 						owner = {
 							tec_waives_clone_origin_assembly_restrictions = yes
@@ -850,7 +847,7 @@ can_build_branch_office_on_planet = {
 						}
 					}
 					overlord = {
-						is_same_value = prevprev.owner
+						is_same_empire = prevprev.owner
 					}
 				}
 				owner = {
@@ -892,7 +889,7 @@ can_build_branch_office_on_planet = {
 						root = {
 							is_subject = yes
 							overlord = {
-								is_same_value = prevprev.owner
+								is_same_empire = prevprev.owner
 							}
 						}
 						owner = {
@@ -1027,7 +1024,7 @@ can_build_branch_office_on_planet = {
 					root = {
 						is_subject = yes
 						overlord = {
-							is_same_value = prevprev.owner
+							is_same_empire = prevprev.owner
 						}
 					}
 					owner = {
